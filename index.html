@@ -45,5 +45,19 @@
     <footer class="footer">
         &copy; 2025 SLAPS. All rights reserved.
     </footer>
+
+    <script>
+        const redDot = document.getElementById('redDot');
+    
+        // Event listener to track mouse movement
+        window.addEventListener('mousemove', (e) => {
+          const mouseX = e.clientX;
+          const mouseY = e.clientY;
+    
+          // Update the position of the red dot
+          redDot.style.left = `${mouseX}px`;
+          redDot.style.top = `${mouseY}px`;
+        });
+      </script>
 </body>
 </html>

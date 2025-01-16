@@ -89,3 +89,13 @@ body {
     background-color: #222;
     color: #fff;
 }
+
+.red-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none; /* Ensures it doesn't interfere with mouse events */
+    transform: translate(-50%, -50%);
+  }

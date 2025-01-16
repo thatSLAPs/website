@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor-Based Audio Panning</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      position: absolute;
+      top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Move your mouse to pan the audio!</h1>
+  <script>
+    // Initialize the Web Audio API
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const audioElement = new Audio('lofi.mp3'); // Replace with your audio file
+    const track = audioContext.createMediaElementSource(audioElement);
+
+    // Create StereoPannerNode for panning
+    const panner = audioContext.createStereoPanner();
+    track.connect(panner).connect(audioContext.destination);
+
+    // Play the audio when the page loads
+    window.addEventListener('click', () => {
+      audioContext.resume().then(() => {
+        audioElement.play();
+      });
+    });
+
+    // Track mouse movement and adjust panning
+    window.addEventListener('mousemove', (event) => {
+      const mouseX = event.clientX; // Get cursor's X position
+      const windowWidth = window.innerWidth;
+
+      // Calculate pan value (-1 for far left, 1 for far right)
+      const panValue = (mouseX / windowWidth) * 2 - 1;
+      panner.pan.setValueAtTime(panValue, audioContext.currentTime);
+    });
+  </script>
+</body>
+</html>
