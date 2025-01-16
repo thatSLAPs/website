@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.contact-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5722;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.contact-button:hover {
+    background-color: #e64a19;
+}
+
+/* Splash Section */
+.splash {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.splash-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Founders Section */
+.founders {
+    padding: 50px 20px;
+}
+
+.founders h2 {
+    text-align: center;
+}
+
+.founder {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.founder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.founder h3 a {
+    text-decoration: none;
+    color: #ff5722;
+}
+
+.founder h3 a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+}
